@@ -1,0 +1,20 @@
+version: '3.1'
+services:
+  redis:
+    image: redis
+
+  proxy:
+      build: .
+      links:
+        - redis
+      command:
+        python3 server/proxy.py
+
+  proxy-http-server:
+      build: .
+      links:
+        - redis
+      ports:
+        - 8080:80
+      command:
+        python3 server/proxy-server.py
