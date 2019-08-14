@@ -1,4 +1,4 @@
-FROM heroku/heroku:18-build
+FROM library/ubuntu:18.04
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV LC_ALL C.UTF-8
@@ -7,7 +7,7 @@ ENV LANG C.UTF-8
 ENV PYTHONDONTWRITEBYTECODE 1
 
 # -- Install Pipenv:
-RUN apt update && apt upgrade -y && apt install python3.7-dev libffi-dev -y
+RUN apt update && apt upgrade -y && apt install python3.7-dev libffi-dev python3-pip -y
 RUN curl --silent https://bootstrap.pypa.io/get-pip.py | python3.7
 
 # Backwards compatility.
@@ -20,6 +20,7 @@ RUN set -ex && mkdir /app
 
 WORKDIR /app
 
+COPY Pipfile .
+COPY ./lib ./lib
+RUN set -ex && pipenv install --deploy --system --skip-lock --verbose
 COPY . .
-
-RUN set -ex && pipenv install --deploy --system

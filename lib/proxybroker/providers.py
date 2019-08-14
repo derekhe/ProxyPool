@@ -803,9 +803,9 @@ PROVIDERS = [
     ),  # noqa; 140
     Xseo_in(proto=('HTTP', 'CONNECT:80', 'HTTPS', 'CONNECT:25')),  # noqa; 240
     Spys_ru(proto=('HTTP', 'CONNECT:80', 'HTTPS', 'CONNECT:25')),  # noqa; 660
-    Proxylistplus_com(
-        proto=('HTTP', 'CONNECT:80', 'HTTPS', 'CONNECT:25')
-    ),  # noqa; 450
+    #Proxylistplus_com(
+    #    proto=('HTTP', 'CONNECT:80', 'HTTPS', 'CONNECT:25')
+    #),  # noqa; 450
     Proxylist_me(
         proto=('HTTP', 'CONNECT:80', 'HTTPS', 'CONNECT:25')
     ),  # noqa; 2872

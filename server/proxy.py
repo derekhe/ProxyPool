@@ -2,6 +2,10 @@ import asyncio
 
 import redis
 from proxybroker import Broker
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
+
 
 print("Start")
 r = redis.Redis(host='redis', db=1, charset="utf-8", decode_responses=True)

@@ -6,10 +6,10 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-aiohttp = ">=3.5.4"
-aiodns = ">=2.0.0"
+aiohttp = "==3.5.4"
+aiodns = "==2.0.0"
 attrs = "==19.1.0"
-maxminddb = ">=1.4.1"
+maxminddb = "==1.4.1"
 proxybroker = {path = "./lib"}
 flask = "*"
 redis = "*"
